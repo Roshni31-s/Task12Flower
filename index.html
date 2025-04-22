@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Beauties - Flower World</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        body {
+            background-color: #fef6f6;
+            color: #444;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #ff9ecf;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 40px;
+            margin-right: 10px;
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        nav {
+            background-color: #ffcce7;
+            padding: 10px 0;
+            border-bottom: 5px dashed #ff9ecf;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: #e83e8c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: #ff9ecf;
+            color: white;
+        }
+        
+        .hero {
+            height: 400px;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('/api/placeholder/800/400') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+        
+        .hero h2 {
+            color: #e83e8c;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff9ecf;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 3px solid #ff9ecf;
+        }
+        
+        .btn:hover {
+            background-color: #fff;
+            color: #ff9ecf;
+        }
+        
+        .flowers-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            color: #e83e8c;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: #ff9ecf;
+            border-radius: 10px;
+        }
+        
+        .flower-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .flower-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .flower-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .flower-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 3px dashed #ff9ecf;
+        }
+        
+        .flower-info {
+            padding: 20px;
+        }
+        
+        .flower-info h3 {
+            color: #e83e8c;
+            margin-bottom: 10px;
+        }
+        
+        .flower-icons {
+            font-size: 30px;
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .flower-icon {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #ffcce7;
+            color: #e83e8c;
+            line-height: 70px;
+            text-align: center;
+            font-size: 35px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .flower-icon:hover {
+            transform: rotate(15deg);
+            background-color: #ff9ecf;
+            color: white;
+        }
+        
+        footer {
+            background-color: #ffcce7;
+            color: #e83e8c;
+            text-align: center;
+            padding: 30px 0;
+            border-top: 5px dashed #ff9ecf;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #ff9ecf;
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icons span:hover {
+            transform: scale(1.2);
+        }
+        
+        /* Flower decorations */
+        .flower-decoration {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        
+        .flower1 { top: 20px; left: 20px; }
+        .flower2 { top: 60px; right: 40px; }
+        .flower3 { bottom: 30px; left: 50px; }
+        .flower4 { bottom: 50px; right: 80px; }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+            
+            .hero {
+                height: 300px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="flower-decoration flower1">🌸</div>
+        <div class="flower-decoration flower2">🌷</div>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🌻</span>
+                <h1>Blooming Beauties</h1>
+            </div>
+        </div>
+        <div class="flower-decoration flower3">🌹</div>
+        <div class="flower-decoration flower4">🌺</div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Types of Flowers</a></li>
+                <li><a href="#">Garden Tips</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Welcome to Our Floral Paradise!</h2>
+                <p>Discover the beauty and magic of flowers. From roses to sunflowers, explore our colorful world of blossoms.</p>
+                <a href="#" class="btn">Explore Flowers</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="flowers-section">
+        <div class="container">
+            <h2 class="section-title">Our Beautiful Flowers</h2>
+            
+            <div class="flower-icons">
+                <div class="flower-icon">🌹</div>
+                <div class="flower-icon">🌷</div>
+                <div class="flower-icon">🌺</div>
+                <div class="flower-icon">🌻</div>
+                <div class="flower-icon">🌼</div>
+            </div>
+            
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <img src="https://images6.fanpop.com/image/photos/34600000/Pretty-Pink-Roses-roses-34610934-1600-1200.jpg" alt="Rose" class="flower-img">
+                    <div class="flower-info">
+                        <h3>Roses</h3>
+                        <p>Elegant and romantic, roses are perfect for any occasion and come in various colors.</p>
+                    </div>
+                </div>
+                
+                <div class="flower-card">
+                    <img src="https://getwallpapers.com/wallpaper/full/7/d/4/870980-widescreen-pink-tulips-wallpaper-2816x2112-for-xiaomi.jpg" alt="Tulips" class="flower-img">
+                    <div class="flower-info">
+                        <h3>Tulips</h3>
+                        <p>Vibrant spring flowers that brighten up any garden with their cup-shaped blooms.</p>
+                    </div>
+                </div>
+                
+                <div class="flower-card">
+                    <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Sunflower-full-HD.jpg" alt="Sunflowers" class="flower-img">
+                    <div class="flower-info">
+                        <h3>Sunflowers</h3>
+                        <p>These cheerful giants follow the sun and symbolize adoration and loyalty.</p>
+                    </div>
+                </div>
+                
+                <div class="flower-card">
+                    <img src="https://cdn.britannica.com/36/82536-050-7E968918.jpg" alt="Daisies" class="flower-img">
+                    <div class="flower-info">
+                        <h3>Daisies</h3>
+                        <p>Simple yet charming flowers that represent innocence and purity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="flowers-section" style="background-color: #ffeffa;">
+        <div class="container">
+            <h2 class="section-title">Seasonal Favorites</h2>
+            
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <img src="https://www.pixelstalk.net/wp-content/uploads/2016/05/Cherry-blossom-tree-wallpapers-flowers.jpg" alt="Cherry Blossoms" class="flower-img">
+                    <div class="flower-info">
+                        <h3>Cherry Blossoms</h3>
+                        <p>Beautiful pink flowers that signal the arrival of spring.</p>
+                    </div>
+                </div>
+                
+                <div class="flower-card">
+                    <img src="https://i.pinimg.com/originals/34/43/60/3443601c2d544d7e549ed5a723228036.jpg" alt="Peonies" class="flower-img">
+                    <div class="flower-info">
+                        <h3>Peonies</h3>
+                        <p>Lush, fragrant blooms that are perfect for bouquets and gardens.</p>
+                    </div>
+                </div>
+                
+                <div class="flower-card">
+                    <img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Lavender-Flower-Picture-Free-Download.jpg" alt="Lavender" class="flower-img">
+                    <div class="flower-info">
+                        <h3>Lavender</h3>
+                        <p>Aromatic purple flowers known for their calming properties.</p>
+                    </div>
+                </div>
+                
+                <div class="flower-card">
+                    <img src="https://plantscapers.com/wp-content/uploads/2016/11/purple-poinsettias.jpg" alt="Poinsettias" class="flower-img">
+                    <div class="flower-info">
+                        <h3>Poinsettias</h3>
+                        <p>Festive red and green plants associated with winter holidays.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-logo">🌸 Blooming Beauties 🌸</div>
+            <p>“Don’t wait for someone to bring you flowers. Plant your own garden and decorate your own soul.” </p>
+            
+            <div class="social-icons">
+                <span>📘</span>
+                <span>📸</span>
+                <span>📱</span>
+                <span>📹</span>
+            </div>
+            
+            <p> Blooming Beauties. </p>
+        </div>
+    </footer>
+</body>
+</html>
