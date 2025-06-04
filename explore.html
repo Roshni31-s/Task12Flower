@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Flowers - Blooming Beauties</title>
+    <style>
+        /* All the same CSS as index.html */
+        
+        /* Additional styles for explore page */
+        .explore-categories {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .category-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 3px dashed #ff9ecf;
+        }
+        
+        .category-info {
+            padding: 25px;
+        }
+        
+        .category-info h3 {
+            color: #e83e8c;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .category-info p {
+            margin-bottom: 20px;
+        }
+        
+        .seasonal-section {
+            background-color: #ffeffa;
+            padding: 60px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="flower-decoration flower1">🌸</div>
+        <div class="flower-decoration flower2">🌷</div>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🌻</span>
+                <h1>Blooming Beauties</h1>
+            </div>
+        </div>
+        <div class="flower-decoration flower3">🌹</div>
+        <div class="flower-decoration flower4">🌺</div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html" class="active">Explore Flowers</a></li>
+                <li><a href="types.html">Types of Flowers</a></li>
+                <li><a href="tips.html">Garden Tips</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <section class="hero" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1455659817273-f96807779a8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Discover Our Flower Collection</h2>
+                    <p>Explore our wide variety of beautiful flowers organized by categories and seasons</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="explore-categories">
+            <div class="container">
+                <h2 class="section-title">Flower Categories</h2>
+                <p>Browse through our curated collections of beautiful blooms</p>
+                
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1559563362-c667ba5f5480?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Roses Collection" class="category-img">
+                        <div class="category-info">
+                            <h3>Romantic Roses</h3>
+                            <p>Discover our collection of classic and modern rose varieties in every color imaginable.</p>
+                            <a href="types.html#roses" class="btn">View Roses</a>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1526397751294-331021109fbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wildflowers" class="category-img">
+                        <div class="category-info">
+                            <h3>Wildflowers</h3>
+                            <p>Explore our selection of beautiful wildflowers that bring natural charm to any garden.</p>
+                            <a href="types.html#wildflowers" class="btn">View Wildflowers</a>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1529066516367-36973222c957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tropical Flowers" class="category-img">
+                        <div class="category-info">
+                            <h3>Tropical Blooms</h3>
+                            <p>Exotic flowers that bring vibrant colors and unique shapes to your floral arrangements.</p>
+                            <a href="types.html#tropical" class="btn">View Tropical</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="seasonal-section">
+            <div class="container">
+                <h2 class="section-title">Seasonal Specials</h2>
+                <p>Discover flowers that are perfect for the current season</p>
+                
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Spring Flowers" class="category-img">
+                        <div class="category-info">
+                            <h3>Spring Blooms</h3>
+                            <p>Fresh flowers that herald the arrival of spring with their vibrant colors.</p>
+                            <a href="types.html#spring" class="btn">View Spring</a>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Summer Flowers" class="category-img">
+                        <div class="category-info">
+                            <h3>Summer Selection</h3>
+                            <p>Bright and cheerful flowers that thrive in the summer heat.</p>
+                            <a href="types.html#summer" class="btn">View Summer</a>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1506792006437-256b665541e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fall Flowers" class="category-img">
+                        <div class="category-info">
+                            <h3>Autumn Arrivals</h3>
+                            <p>Warm-toned flowers that complement the colors of fall.</p>
+                            <a href="types.html#autumn" class="btn">View Autumn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-logo">🌸 Blooming Beauties 🌸</div>
+            <p>"Don't wait for someone to bring you flowers. Plant your own garden and decorate your own soul."</p>
+            
+            <div class="social-icons">
+                <span>📘</span>
+                <span>📸</span>
+                <span>📱</span>
+                <span>📹</span>
+            </div>
+            
+            <p>&copy; 2023 Blooming Beauties. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Same navigation highlighting script as other pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
