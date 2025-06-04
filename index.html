@@ -82,9 +82,14 @@
             color: white;
         }
         
+        nav a.active {
+            background-color: #ff9ecf;
+            color: white;
+        }
+        
         .hero {
             height: 400px;
-            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('/api/placeholder/800/400') center/cover;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1526397751294-331021109fbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -216,6 +221,141 @@
             color: white;
         }
         
+        /* Types of Flowers Page Specific Styles */
+        .flower-types {
+            padding: 60px 0;
+        }
+        
+        .flower-category {
+            margin-bottom: 50px;
+        }
+        
+        .flower-category h3 {
+            color: #e83e8c;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px dashed #ff9ecf;
+        }
+        
+        .flower-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .flower-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Garden Tips Page Specific Styles */
+        .tips-section {
+            padding: 60px 0;
+        }
+        
+        .tip-card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tip-card h3 {
+            color: #e83e8c;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Gallery Page Specific Styles */
+        .gallery-section {
+            padding: 60px 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Contact Page Specific Styles */
+        .contact-section {
+            padding: 60px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h3 {
+            color: #e83e8c;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #e83e8c;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ffcce7;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
         footer {
             background-color: #ffcce7;
             color: #e83e8c;
@@ -284,6 +424,7 @@
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="flower-decoration flower1">🌸</div>
         <div class="flower-decoration flower2">🌷</div>
@@ -297,120 +438,133 @@
         <div class="flower-decoration flower4">🌺</div>
     </header>
     
+    <!-- Navigation -->
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Types of Flowers</a></li>
-                <li><a href="#">Garden Tips</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="types.html">Types of Flowers</a></li>
+                <li><a href="tips.html">Garden Tips</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
     
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Welcome to Our Floral Paradise!</h2>
-                <p>Discover the beauty and magic of flowers. From roses to sunflowers, explore our colorful world of blossoms.</p>
-                <a href="#" class="btn">Explore Flowers</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="flowers-section">
-        <div class="container">
-            <h2 class="section-title">Our Beautiful Flowers</h2>
-            
-            <div class="flower-icons">
-                <div class="flower-icon">🌹</div>
-                <div class="flower-icon">🌷</div>
-                <div class="flower-icon">🌺</div>
-                <div class="flower-icon">🌻</div>
-                <div class="flower-icon">🌼</div>
-            </div>
-            
-            <div class="flower-grid">
-                <div class="flower-card">
-                    <img src="https://images6.fanpop.com/image/photos/34600000/Pretty-Pink-Roses-roses-34610934-1600-1200.jpg" alt="Rose" class="flower-img">
-                    <div class="flower-info">
-                        <h3>Roses</h3>
-                        <p>Elegant and romantic, roses are perfect for any occasion and come in various colors.</p>
-                    </div>
-                </div>
-                
-                <div class="flower-card">
-                    <img src="https://getwallpapers.com/wallpaper/full/7/d/4/870980-widescreen-pink-tulips-wallpaper-2816x2112-for-xiaomi.jpg" alt="Tulips" class="flower-img">
-                    <div class="flower-info">
-                        <h3>Tulips</h3>
-                        <p>Vibrant spring flowers that brighten up any garden with their cup-shaped blooms.</p>
-                    </div>
-                </div>
-                
-                <div class="flower-card">
-                    <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Sunflower-full-HD.jpg" alt="Sunflowers" class="flower-img">
-                    <div class="flower-info">
-                        <h3>Sunflowers</h3>
-                        <p>These cheerful giants follow the sun and symbolize adoration and loyalty.</p>
-                    </div>
-                </div>
-                
-                <div class="flower-card">
-                    <img src="https://cdn.britannica.com/36/82536-050-7E968918.jpg" alt="Daisies" class="flower-img">
-                    <div class="flower-info">
-                        <h3>Daisies</h3>
-                        <p>Simple yet charming flowers that represent innocence and purity.</p>
-                    </div>
+    <!-- Main Content (changes based on page) -->
+    <main>
+        <!-- Home Page Content -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Welcome to Our Floral Paradise!</h2>
+                    <p>Discover the beauty and magic of flowers. From roses to sunflowers, explore our colorful world of blossoms.</p>
+                    <a href="types.html" class="btn">Explore Flowers</a>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section class="flowers-section" style="background-color: #ffeffa;">
-        <div class="container">
-            <h2 class="section-title">Seasonal Favorites</h2>
-            
-            <div class="flower-grid">
-                <div class="flower-card">
-                    <img src="https://www.pixelstalk.net/wp-content/uploads/2016/05/Cherry-blossom-tree-wallpapers-flowers.jpg" alt="Cherry Blossoms" class="flower-img">
-                    <div class="flower-info">
-                        <h3>Cherry Blossoms</h3>
-                        <p>Beautiful pink flowers that signal the arrival of spring.</p>
-                    </div>
+        </section>
+        
+        <section class="flowers-section">
+            <div class="container">
+                <h2 class="section-title">Our Beautiful Flowers</h2>
+                
+                <div class="flower-icons">
+                    <div class="flower-icon">🌹</div>
+                    <div class="flower-icon">🌷</div>
+                    <div class="flower-icon">🌺</div>
+                    <div class="flower-icon">🌻</div>
+                    <div class="flower-icon">🌼</div>
                 </div>
                 
-                <div class="flower-card">
-                    <img src="https://i.pinimg.com/originals/34/43/60/3443601c2d544d7e549ed5a723228036.jpg" alt="Peonies" class="flower-img">
-                    <div class="flower-info">
-                        <h3>Peonies</h3>
-                        <p>Lush, fragrant blooms that are perfect for bouquets and gardens.</p>
+                <div class="flower-grid">
+                    <div class="flower-card">
+                        <img src="https://images6.fanpop.com/image/photos/34600000/Pretty-Pink-Roses-roses-34610934-1600-1200.jpg" alt="Rose" class="flower-img">
+                        <div class="flower-info">
+                            <h3>Roses</h3>
+                            <p>Elegant and romantic, roses are perfect for any occasion and come in various colors.</p>
+                            <a href="types.html#roses" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Learn More</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="flower-card">
-                    <img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Lavender-Flower-Picture-Free-Download.jpg" alt="Lavender" class="flower-img">
-                    <div class="flower-info">
-                        <h3>Lavender</h3>
-                        <p>Aromatic purple flowers known for their calming properties.</p>
+                    
+                    <div class="flower-card">
+                        <img src="https://getwallpapers.com/wallpaper/full/7/d/4/870980-widescreen-pink-tulips-wallpaper-2816x2112-for-xiaomi.jpg" alt="Tulips" class="flower-img">
+                        <div class="flower-info">
+                            <h3>Tulips</h3>
+                            <p>Vibrant spring flowers that brighten up any garden with their cup-shaped blooms.</p>
+                            <a href="types.html#tulips" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Learn More</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="flower-card">
-                    <img src="https://plantscapers.com/wp-content/uploads/2016/11/purple-poinsettias.jpg" alt="Poinsettias" class="flower-img">
-                    <div class="flower-info">
-                        <h3>Poinsettias</h3>
-                        <p>Festive red and green plants associated with winter holidays.</p>
+                    
+                    <div class="flower-card">
+                        <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Sunflower-full-HD.jpg" alt="Sunflowers" class="flower-img">
+                        <div class="flower-info">
+                            <h3>Sunflowers</h3>
+                            <p>These cheerful giants follow the sun and symbolize adoration and loyalty.</p>
+                            <a href="types.html#sunflowers" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flower-card">
+                        <img src="https://cdn.britannica.com/36/82536-050-7E968918.jpg" alt="Daisies" class="flower-img">
+                        <div class="flower-info">
+                            <h3>Daisies</h3>
+                            <p>Simple yet charming flowers that represent innocence and purity.</p>
+                            <a href="types.html#daisies" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <section class="flowers-section" style="background-color: #ffeffa;">
+            <div class="container">
+                <h2 class="section-title">Seasonal Favorites</h2>
+                
+                <div class="flower-grid">
+                    <div class="flower-card">
+                        <img src="https://www.pixelstalk.net/wp-content/uploads/2016/05/Cherry-blossom-tree-wallpapers-flowers.jpg" alt="Cherry Blossoms" class="flower-img">
+                        <div class="flower-info">
+                            <h3>Cherry Blossoms</h3>
+                            <p>Beautiful pink flowers that signal the arrival of spring.</p>
+                            <a href="types.html#cherry-blossoms" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flower-card">
+                        <img src="https://i.pinimg.com/originals/34/43/60/3443601c2d544d7e549ed5a723228036.jpg" alt="Peonies" class="flower-img">
+                        <div class="flower-info">
+                            <h3>Peonies</h3>
+                            <p>Lush, fragrant blooms that are perfect for bouquets and gardens.</p>
+                            <a href="types.html#peonies" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flower-card">
+                        <img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Lavender-Flower-Picture-Free-Download.jpg" alt="Lavender" class="flower-img">
+                        <div class="flower-info">
+                            <h3>Lavender</h3>
+                            <p>Aromatic purple flowers known for their calming properties.</p>
+                            <a href="types.html#lavender" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flower-card">
+                        <img src="https://plantscapers.com/wp-content/uploads/2016/11/purple-poinsettias.jpg" alt="Poinsettias" class="flower-img">
+                        <div class="flower-info">
+                            <h3>Poinsettias</h3>
+                            <p>Festive red and green plants associated with winter holidays.</p>
+                            <a href="types.html#poinsettias" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
     <footer>
         <div class="container">
             <div class="footer-logo">🌸 Blooming Beauties 🌸</div>
-            <p>“Don’t wait for someone to bring you flowers. Plant your own garden and decorate your own soul.” </p>
+            <p>"Don't wait for someone to bring you flowers. Plant your own garden and decorate your own soul."</p>
             
             <div class="social-icons">
                 <span>📘</span>
@@ -419,8 +573,22 @@
                 <span>📹</span>
             </div>
             
-            <p> Blooming Beauties. </p>
+            <p>&copy; 2023 Blooming Beauties. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Simple script to highlight current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
