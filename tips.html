@@ -1,32 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head content as index.html -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Garden Tips - Blooming Beauties</title>
+    <style>
+        /* General Body and Fonts */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* A cute font choice */
+            background-color: #FFF0F5; /* Blushing Pink */
+            margin: 0;
+            padding: 0;
+            color: #4B0082; /* Indigo for cute contrast */
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #FFC0CB; /* Pink */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            border-bottom-left-radius: 20px; /* Rounded corners */
+            border-bottom-right-radius: 20px;
+        }
+
+        nav h1 {
+            font-size: 1.8rem;
+            color: #8A2BE2; /* BlueViolet for heading */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.8rem; /* Slightly more space */
+        }
+
+        nav ul li a {
+            color: #8A2BE2; /* BlueViolet for links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth hover */
+        }
+
+        nav ul li a:hover {
+            color: #FF69B4; /* Hot Pink on hover */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        /* Container for Main Content */
+        .container {
+            max-width: 900px; /* Slightly adjusted max-width */
+            margin: 2.5rem auto; /* More margin for breathing room */
+            padding: 0 1.5rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #FF69B4; /* Hot Pink */
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+            font-weight: bold;
+        }
+
+        /* Tip Cards */
+        .tip-card {
+            background: #FFFFFF; /* White background for cards */
+            padding: 2rem;
+            border-radius: 15px; /* More rounded corners */
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* More prominent, soft shadow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
+            border: 2px solid #FFDAB9; /* Peach Puff border for cuteness */
+        }
+
+        .tip-card:hover {
+            transform: translateY(-8px); /* Lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+
+        .tip-card h3 {
+            color: #FF1493; /* Deep Pink for headings */
+            margin-bottom: 0.8rem;
+            font-size: 1.7rem;
+            text-align: center;
+            border-bottom: 2px dashed #FFDAB9; /* Dashed border for cuteness */
+            padding-bottom: 0.5rem;
+        }
+
+        .tip-card p {
+            margin-bottom: 0.5rem;
+            color: #4B0082; /* Indigo for body text */
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #FFC0CB; /* Pink */
+            color: #8A2BE2; /* BlueViolet */
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            border-top-left-radius: 20px; /* Rounded corners */
+            border-top-right-radius: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <!-- Same header and nav as index.html -->
-    
+    <nav>
+        <h1> Blooming Beauties</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="-tips.html">Garden Tips</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
     <main>
         <section class="tips-section">
             <div class="container">
                 <h2 class="section-title">Garden Tips & Advice</h2>
-                
+
                 <div class="tip-card">
                     <h3>Preparing Your Soil</h3>
                     <p>Healthy soil is the foundation of a beautiful garden. Test your soil's pH and amend it with compost or other organic matter to create the perfect growing environment for your flowers.</p>
                 </div>
-                
+
                 <div class="tip-card">
                     <h3>Watering Techniques</h3>
                     <p>Water deeply but less frequently to encourage strong root growth. Early morning is the best time to water, as it reduces evaporation and helps prevent fungal diseases.</p>
                 </div>
-                
-                <!-- More tips... -->
+
+                <div class="tip-card">
+                    <h3>Choosing the Right Plants</h3>
+                    <p>Select plants that are well-suited to your climate and soil type. Consider sun exposure, mature size, and watering needs to ensure your garden thrives.</p>
+                </div>
+
+                 <div class="tip-card">
+                    <h3>Pest and Disease Management</h3>
+                    <p>Regularly inspect your plants for signs of pests or diseases. Use organic solutions where possible, and act quickly to prevent widespread damage.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h3>Pruning for Health and Beauty</h3>
+                    <p>Proper pruning encourages bushier growth, more blooms, and overall plant health. Learn when and how to prune different types of flowers and shrubs.</p>
+                </div>
+
             </div>
         </section>
     </main>
-    
-    <!-- Same footer as index.html -->
+
+    <footer>
+        <p> 2025 Blooming Beauties. All rights reserved.</p>
+    </footer>
 </body>
 </html>
