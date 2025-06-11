@@ -1,11 +1,194 @@
-<!DOCTYPE html>
+
+                           
+           <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head content as index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Types of Flowers - Blooming Beauties</title>
+    <style>
+        /* Cute Pink Theme CSS */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            line-height: 1.6;
+            color: #555;
+            background-color: #fff0f5; /* Soft pink background */
+            margin: 0;
+            padding: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffd6e7" opacity="0.3" d="M30,50 Q50,30 70,50 Q50,70 30,50"/></svg>');
+            background-size: 100px;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        h2.section-title {
+            color: #ff66b2; /* Bright pink */
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(255,182,193,0.5);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        h2.section-title::before, 
+        h2.section-title::after {
+            content: "🌸";
+            display: inline-block;
+            margin: 0 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        h2.section-title::after {
+            animation-delay: 0.5s;
+        }
+        
+        .flower-category h3 {
+            color: #ff85a2; /* Medium pink */
+            font-size: 2rem;
+            padding: 10px 20px;
+            background: linear-gradient(to right, rgba(255,214,231,0.3), rgba(255,214,231,0.7));
+            border-radius: 50px;
+            display: inline-block;
+            margin: 60px 0 30px;
+            position: relative;
+        }
+        
+        .flower-category h3::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff66b2"><path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M15.5,8C16.3,8 17,8.7 17,9.5C17,10.3 16.3,11 15.5,11C14.7,11 14,10.3 14,9.5C14,8.7 14.7,8 15.5,8M8.5,8C9.3,8 10,8.7 10,9.5C10,10.3 9.3,11 8.5,11C7.7,11 7,10.3 7,9.5C7,8.7 7.7,8 8.5,8M12,11.5C13.1,11.5 14,12.4 14,13.5C14,14.6 13.1,15.5 12,15.5C10.9,15.5 10,14.6 10,13.5C10,12.4 10.9,11.5 12,11.5M19,17V19H5V17C5,14.8 8.1,13 12,13C15.9,13 19,14.8 19,17Z" /></svg>');
+            background-size: contain;
+            animation: spin 4s linear infinite;
+        }
+        
+        .flower-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .flower-item {
+            background-color: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(255,105,180,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #ffcce6;
+        }
+        
+        .flower-item::before {
+            content: "🌺";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 3rem;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .flower-item:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(255,105,180,0.2);
+        }
+        
+        .flower-item h4 {
+            color: #ff66b2;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .flower-item h4::before {
+            content: "✨";
+            margin-right: 8px;
+        }
+        
+        .flower-item p {
+            color: #777;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Cute corner ribbon */
+        .flower-item::after {
+            content: "BLOOM!";
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: #ff85a2;
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Floating hearts background */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255,182,193,0.5);
+            animation: float-heart 5s linear infinite;
+        }
+        
+        @keyframes float-heart {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Same header and nav as index.html -->
+    <!-- Floating hearts background -->
+    <div class="hearts" id="hearts"></div>
     
     <main>
         <section class="flower-types">
@@ -17,15 +200,15 @@
                     <div class="flower-list">
                         <div class="flower-item">
                             <h4>Hybrid Tea Roses</h4>
-                            <p>The classic long-stemmed roses, perfect for cutting and arranging.</p>
+                            <p>The classic long-stemmed roses, perfect for cutting and arranging. So elegant! 💐</p>
                         </div>
                         <div class="flower-item">
                             <h4>Floribunda Roses</h4>
-                            <p>Cluster-flowering roses that bloom repeatedly throughout the season.</p>
+                            <p>Cluster-flowering roses that bloom repeatedly throughout the season. So cheerful! 🌹</p>
                         </div>
                         <div class="flower-item">
                             <h4>Climbing Roses</h4>
-                            <p>Vigorous growers that can cover walls, fences, and trellises.</p>
+                            <p>Vigorous growers that can cover walls, fences, and trellises. So romantic! 🌷</p>
                         </div>
                     </div>
                 </div>
@@ -35,24 +218,48 @@
                     <div class="flower-list">
                         <div class="flower-item">
                             <h4>Single Early Tulips</h4>
-                            <p>Classic cup-shaped tulips that bloom in early spring.</p>
+                            <p>Classic cup-shaped tulips that bloom in early spring. Hello sunshine! 🌞</p>
                         </div>
                         <div class="flower-item">
                             <h4>Parrot Tulips</h4>
-                            <p>Frilly, feather-edged petals in vibrant colors.</p>
+                            <p>Frilly, feather-edged petals in vibrant colors. So fancy! 🦜</p>
                         </div>
                         <div class="flower-item">
                             <h4>Darwin Hybrid Tulips</h4>
-                            <p>Large, sturdy flowers that come back year after year.</p>
+                            <p>Large, sturdy flowers that come back year after year. Reliable beauty! 🌷</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- More flower categories... -->
             </div>
         </section>
     </main>
-    
-    <!-- Same footer as index.html -->
+
+    <script>
+        // Create floating hearts
+        const heartsContainer = document.getElementById('hearts');
+        const emojis = ['💖', '🌸', '🌺', '🌼', '🌷', '💮', '🏵️'];
+        
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 5 + 's';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heartsContainer.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+        
+        // Generate hearts periodically
+        setInterval(createHeart, 300);
+        
+        // Initial hearts
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createHeart, i * 200);
+        }
+    </script>
 </body>
 </html>
