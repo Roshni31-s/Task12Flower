@@ -1,26 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head content as index.html -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Contact Us - Blooming Beauties</title>
+    <style>
+        /* General Body and Fonts */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* A cute font choice */
+            background-color: #FFF0F5; /* Blushing Pink */
+            margin: 0;
+            padding: 0;
+            color: #4B0082; /* Indigo for cute contrast */
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #FFC0CB; /* Pink */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            border-bottom-left-radius: 20px; /* Rounded corners */
+            border-bottom-right-radius: 20px;
+        }
+
+        nav h1 {
+            font-size: 1.8rem;
+            color: #8A2BE2; /* BlueViolet for heading */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.8rem; /* Slightly more space */
+        }
+
+        nav ul li a {
+            color: #8A2BE2; /* BlueViolet for links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth hover */
+        }
+
+        nav ul li a:hover {
+            color: #FF69B4; /* Hot Pink on hover */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        /* Container for Main Content */
+        .container {
+            max-width: 900px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #FF69B4; /* Hot Pink */
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+            font-weight: bold;
+        }
+
+        /* Contact Section Specifics */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            gap: 2rem;
+            justify-content: center; /* Center items when they wrap */
+        }
+
+        .contact-info,
+        .contact-form {
+            background: #FFFFFF; /* White background for cards */
+            padding: 2rem;
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            border: 2px solid #FFDAB9; /* Peach Puff border */
+            flex: 1; /* Allows them to grow and shrink */
+            min-width: 300px; /* Minimum width before wrapping */
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            color: #FF1493; /* Deep Pink for headings */
+            margin-bottom: 1.5rem;
+            font-size: 1.7rem;
+            text-align: center;
+            border-bottom: 2px dashed #FFDAB9; /* Dashed border for cuteness */
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            color: #4B0082;
+        }
+
+        .contact-info p strong {
+            color: #FF69B4; /* Hot Pink for strong text */
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #FF69B4; /* Hot Pink for labels */
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: calc(100% - 20px); /* Adjust for padding */
+            padding: 10px;
+            border: 2px solid #FFDAB9; /* Peach Puff border */
+            border-radius: 8px; /* Slightly rounded inputs */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 1rem;
+            color: #4B0082;
+            background-color: #FFFDFD; /* Slightly off-white background */
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus {
+            border-color: #FF69B4; /* Hot Pink on focus */
+            box-shadow: 0 0 8px rgba(255, 105, 180, 0.3); /* Soft glow on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        .form-group textarea {
+            resize: vertical; /* Allow vertical resizing */
+            min-height: 100px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #FF69B4; /* Hot Pink button */
+            color: white;
+            border: none;
+            border-radius: 10px; /* Rounded button */
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #FF1493; /* Deep Pink on hover */
+            transform: translateY(-3px); /* Lift effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #FFC0CB; /* Pink */
+            color: #8A2BE2; /* BlueViolet */
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            border-top-left-radius: 20px; /* Rounded corners */
+            border-top-right-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column; /* Stack contact info and form on small screens */
+                align-items: center;
+            }
+            .contact-info,
+            .contact-form {
+                width: 90%; /* Take up more width on smaller screens */
+                min-width: unset; /* Remove min-width restriction */
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Same header and nav as index.html -->
-    
+    <nav>
+        <h1> Blooming Beauties</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="garden-tips.html">Garden Tips</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
     <main>
         <section class="contact-section">
             <div class="container">
                 <h2 class="section-title">Contact Us</h2>
-                
+
                 <div class="contact-container">
                     <div class="contact-info">
                         <h3>Our Information</h3>
                         <p><strong>Address:</strong> Garden Road, 12345</p>
-                        <p><strong>Phone:</strong>+91 1234567890</p>
+                        <p><strong>Phone:</strong> +91 1234567890</p>
                         <p><strong>Email:</strong> info@bloomingbeauties.com</p>
                         <p><strong>Hours:</strong> Monday-Friday: 9am-5pm</p>
                     </div>
-                    
+
                     <div class="contact-form">
                         <h3>Send Us a Message</h3>
                         <form>
@@ -43,7 +242,9 @@
             </div>
         </section>
     </main>
-    
-    <!-- Same footer as index.html -->
+
+    <footer>
+        <p>&copy; 2025 Blooming Beauties. All rights reserved.</p>
+    </footer>
 </body>
 </html>
