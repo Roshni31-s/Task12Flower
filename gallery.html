@@ -1,30 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head content as index.html -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Flower Gallery - Blooming Beauties</title>
+    <style>
+        /* General Body and Fonts */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* A cute font choice */
+            background-color: #FFF0F5; /* Blushing Pink */
+            margin: 0;
+            padding: 0;
+            color: #4B0082; /* Indigo for cute contrast */
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #FFC0CB; /* Pink */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            border-bottom-left-radius: 20px; /* Rounded corners */
+            border-bottom-right-radius: 20px;
+        }
+
+        nav h1 {
+            font-size: 1.8rem;
+            color: #8A2BE2; /* BlueViolet for heading */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.8rem; /* Slightly more space */
+        }
+
+        nav ul li a {
+            color: #8A2BE2; /* BlueViolet for links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth hover */
+        }
+
+        nav ul li a:hover {
+            color: #FF69B4; /* Hot Pink on hover */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        /* Container for Main Content */
+        .container {
+            max-width: 1000px; /* Slightly wider for the gallery */
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #FF69B4; /* Hot Pink */
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+            font-weight: bold;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 2rem; /* Space between gallery items */
+            justify-content: center; /* Center items in the grid */
+        }
+
+        .gallery-item {
+            background: #FFFFFF; /* White background for each image card */
+            border-radius: 15px; /* Rounded corners for the card */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            overflow: hidden; /* Ensures image corners are rounded */
+            border: 2px solid #FFDAB9; /* Peach Puff border */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover */
+            text-align: center; /* Center alt text if visible */
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02); /* Lift and slightly enlarge on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+
+        .gallery-item img {
+            width: 100%; /* Image takes full width of its container */
+            height: 280px; /* Fixed height for consistency */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            display: block; /* Removes extra space below image */
+            border-top-left-radius: 13px; /* Match outer border-radius */
+            border-top-right-radius: 13px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #FFC0CB; /* Pink */
+            color: #8A2BE2; /* BlueViolet */
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            border-top-left-radius: 20px; /* Rounded corners */
+            border-top-right-radius: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <!-- Same header and nav as index.html -->
     
+
     <main>
         <section class="gallery-section">
             <div class="container">
                 <h2 class="section-title">Our Flower Gallery</h2>
-                
+
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="https://source.unsplash.com/random/300x300/?rose" alt="Rose">
+                        <img src="https://source.unsplash.com/random/300x300/?pink+rose" alt="Lovely Pink Rose">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://source.unsplash.com/random/300x300/?tulip" alt="Tulip">
+                        <img src="https://source.unsplash.com/random/300x300/?tulip+field" alt="Vibrant Tulip Field">
                     </div>
-                    <!-- More gallery items... -->
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300/?daisy+close-up" alt="Delicate Daisy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300/?sunflower+garden" alt="Bright Sunflower">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300/?lavender+flower" alt="Soothing Lavender">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300/?orchid+flower" alt="Elegant Orchid">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300/?lily+pond" alt="Graceful Water Lily">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300/?cherry+blossom" alt="Beautiful Cherry Blossoms">
+                    </div>
+                     <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300/?hydrangea" alt="Lush Hydrangea Bush">
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    
-    <!-- Same footer as index.html -->
+
+    <footer>
+        <p> Blooming Beauties. All rights reserved.</p>
+    </footer>
 </body>
 </html>
